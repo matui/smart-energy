@@ -7,7 +7,7 @@ function parse_csv(file,name,output,cb){
      if(!jsonObj["1"] || jsonObj["1"]==0)
        return
      if(!output[jsonObj["CODE3"]])
-       output[jsonObj["CODE3"]]={"Region":jsonObj["CODE3"]}
+       output[jsonObj["CODE3"]]={"Region":jsonObj["CODE3"],"County":jsonObj["COUN_NA"],"Town":jsonObj["TOWN_NA"]}
      output[jsonObj["CODE3"]][name+"1"]=jsonObj["1"]
      output[jsonObj["CODE3"]][name+"2"]=jsonObj["2"]
      output[jsonObj["CODE3"]][name+"3"]=jsonObj["3"]
