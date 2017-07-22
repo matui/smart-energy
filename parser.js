@@ -32,6 +32,8 @@ parse_csv('./csv/power/102_PowerSum.csv',"102_",[],(output)=>{
       let flag =true
       for(var a in ou){
         let ln = ""
+        if (Object.keys(ou[a]).length!=39)
+          continue
         for(var s in ou[a]){
           if(flag)
             title+=s+','
