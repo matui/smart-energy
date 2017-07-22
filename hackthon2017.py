@@ -40,18 +40,18 @@ print "answers",np.shape(answers)
 print "testers",np.shape(testers)
 
 model = Sequential()
-model.add(Dense(400, input_dim=12,kernel_initializer='normal', activation='relu'))
-model.add(Dense(200, input_dim=12,kernel_initializer='normal', activation='relu'))
+model.add(Dense(800, input_dim=12,kernel_initializer='normal', activation='relu'))
+model.add(Dense(400,kernel_initializer='normal', activation='relu'))
+model.add(Dense(200,kernel_initializer='normal', activation='relu'))
 model.add(Dense(100,kernel_initializer='normal', activation='relu'))
-model.add(Dense(50,kernel_initializer='normal', activation='relu'))
 model.add(Dense(25,kernel_initializer='normal', activation='relu'))
 model.add(Dense(1, kernel_initializer='normal'))
 model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 model.fit(features, answers, epochs=10, batch_size=32)
 
 predictions = model.predict(testers,batch_size=32)
-for i,x in enumerate(predictions):
-    print county[i],town[i],code[i],int(x[0]*10000000)
+#for i,x in enumerate(predictions):
+#    print county[i],town[i],code[i],int(x[0]*10000000)
 
 with open(sys.argv[2],'w') as w:
     for i,x in enumerate(predictions):
@@ -59,7 +59,7 @@ with open(sys.argv[2],'w') as w:
         w.write(s)
         w.write("\n")
 
-'''
+predictions = model.predict(features , batch_size=32)
 i=0
 s=''
 for x in predictions:
@@ -69,4 +69,4 @@ for x in predictions:
         s=''
     s+='{0:10} , '.format(int(x[0]*10000000))
     i+=1
-'''
+
