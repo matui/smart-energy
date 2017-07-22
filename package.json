@@ -1,0 +1,9 @@
+{
+  "name": "smart-energy",
+  "version": "0.0.1",
+  "description": "Hackthon energy predictor",
+  "license" : "hsjiang",
+  "dependencies": {
+    "csvtojson": "^1.1.7"
+  }
+}
