@@ -2,7 +2,7 @@ const csvFilePath='./csv/power/103_PowerSum.csv'
 const csv=require('csvtojson')
 function parse_csv(file,name,output,cb){
   csv()
-  .fromFile(csvFilePath)
+  .fromFile(file)
   .on('json',(jsonObj)=>{
      if(!jsonObj["1"] || jsonObj["1"]==0)
        return
